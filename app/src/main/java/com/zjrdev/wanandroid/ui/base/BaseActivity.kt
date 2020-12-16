@@ -23,4 +23,9 @@ abstract class BaseActivity: AppCompatActivity() {
     open fun initImmersionBar() {
 
     }
+
+    protected open fun initActivity(savedInstanceState: Bundle?) {
+        initView(savedInstanceState)
+        initData()
+    }
 }
