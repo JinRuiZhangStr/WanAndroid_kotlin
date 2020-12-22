@@ -46,6 +46,7 @@ class WanApplication : Application() {
 
         /**
          * 初始化LiveEventBus
+         * 基于JetPack中LiveData封装而成
          * 1、supportBroadcast配置支持跨进程、跨APP通信
          * 2、配置LifecycleObserver（如Activity）接收消息的模式（默认值true）：
          * true：整个生命周期（从onCreate到onDestroy）都可以实时收到消息
@@ -53,6 +54,7 @@ class WanApplication : Application() {
          * 态，方可收到消息
          * 3、autoClear
          * 配置在没有Observer关联的时候是否自动清除LiveEvent以释放内存（默认值false）
+
          * */
         LiveEventBus.config()
 

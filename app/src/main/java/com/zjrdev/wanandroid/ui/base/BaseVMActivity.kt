@@ -1,7 +1,7 @@
 package com.zjrdev.wanandroid.ui.base
 
 import android.os.Bundle
-import com.zjrdev.wanandroid.vm.BaseViewModel
+import com.zjrdev.wanandroid.vm.base.BaseViewModel
 
 /**
  * 抽象类、方法是默认带 open  代表子类必须重写该方法

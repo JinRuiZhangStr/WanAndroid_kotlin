@@ -5,6 +5,7 @@ import com.zjrdev.wanandroid.R
 import com.zjrdev.wanandroid.ui.base.BaseActivity
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.MainScope
+import org.jetbrains.anko.startActivity
 
 /**
  *Created by 张金瑞.
@@ -16,10 +17,15 @@ class WelcomeActivity: BaseActivity(), CoroutineScope by MainScope() {
     }
 
     override fun initView(savedInstanceState: Bundle?) {
-        TODO("Not yet implemented")
+        startActivity()
     }
 
     override fun initData() {
-        TODO("Not yet implemented")
+
+    }
+
+    private fun startActivity() {
+        startActivity<MainActivity>()
+        finish()
     }
 }

@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigationBarBg"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="?attr/colorPrimary"
+    android:minHeight="48dp">
+
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ivBackNavigationBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingLeft="16dp"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp"
+        android:src="@drawable/ic_arrow_black"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="?attr/textColorPrimary"
+        tools:ignore="RtlSymmetry" />
+
+
+    <TextView
+        android:id="@+id/tvLeftTitleNavigationBar"
+        style="@style/text_color_primary_alpha_18"
+        android:layout_marginLeft="16dp"
+        android:textColor="?attr/textColorPrimary"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@id/ivBackNavigationBar"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_goneMarginStart="16dp"/>
+
+    <TextView
+        android:id="@+id/tvRightTitleNavigationBar"
+        style="@style/text_color_primary_alpha_18"
+        android:layout_marginRight="16dp"
+        android:textColor="?attr/textColorPrimary"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tlNavigationBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimary"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tabGravity="fill"
+        app:tabIndicatorHeight="0dp"
+        app:tabSelectedTextColor="?attr/textColorPrimary"
+        app:tabTextAppearance="@style/MyTabLayoutTextAppearance"
+        app:tabTextColor="@color/theme_text_color_primary_alpha_60" />
+
+
+    <TextView
+        android:id="@+id/tvTitleNavigationBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:maxEms="12"
+        android:singleLine="true"
+        android:textColor="?attr/textColorPrimary"
+        android:textSize="18sp"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ivRightNavigationBarOne"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="4dp"
+        android:padding="12dp"
+        android:src="@drawable/ic_settings_black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="?attr/textColorPrimary"
+        tools:ignore="ContentDescription" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ivRightNavigationBarSearch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingLeft="4dp"
+        android:paddingTop="12dp"
+        android:paddingRight="4dp"
+        android:paddingBottom="12dp"
+        android:src="@drawable/ic_search_black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/ivRightNavigationBarOne"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_goneMarginEnd="12dp"
+        app:tint="?attr/textColorPrimary" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -11,12 +11,21 @@ android {
 
     defaultConfig {
         applicationId "com.zjrdev.wanandroid"
-        minSdkVersion 16
+        minSdkVersion 21
         targetSdkVersion 29
         versionCode 1
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [
+                        "room.schemaLocation"  : "$projectDir/build/schemas".toString(),
+                        "room.incremental"     : "true",
+                        "room.expandProjection": "true"]
+            }
+        }
     }
 
     buildTypes {
@@ -29,6 +38,14 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+//    javaCompileOptions {
+//        annotationProcessorOptions {
+//            arguments = [
+//                    "room.schemaLocation"  : "$projectDir/build/schemas".toString(),
+//                    "room.incremental"     : "true",
+//                    "room.expandProjection": "true"]
+//        }
+//    }
     kotlinOptions {
         jvmTarget = '1.8'
     }
@@ -41,6 +58,8 @@ dependencies {
     implementation 'androidx.appcompat:appcompat:1.2.0'
     implementation 'com.google.android.material:material:1.2.1'
     implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
+    implementation 'androidx.navigation:navigation-fragment-ktx:2.3.2'
+    implementation 'androidx.navigation:navigation-ui-ktx:2.3.2'
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
@@ -51,6 +70,11 @@ dependencies {
     implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.3.0-alpha07'
     implementation 'androidx.lifecycle:lifecycle-viewmodel-savedstate:2.3.0-alpha07'
 
+    //添加Room的依赖
+    implementation 'androidx.room:room-runtime:2.2.5'
+    implementation 'androidx.room:room-ktx:2.2.5'
+    kapt 'androidx.room:room-compiler:2.2.5'
+
     //日志
     implementation 'com.jakewharton.timber:timber:4.7.1'
 
@@ -60,7 +84,8 @@ dependencies {
     implementation 'org.koin:koin-androidx-scope:2.0.1'
     // or Koin for Android Architecture ViewModel
     implementation 'org.koin:koin-androidx-viewmodel:2.0.1'
-
+    // kotlin官方开发的一个让开发Android应用更快更简单的Kotlin库
+    implementation "org.jetbrains.anko:anko:$anko_version"
     //retrofit
     implementation 'com.squareup.retrofit2:retrofit:2.9.0'
     implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
@@ -72,11 +97,11 @@ dependencies {
     implementation 'com.jeremyliao:live-event-bus-x:1.6.1'
 
     //下来刷新框架
-    implementation  'com.scwang.smart:refresh-layout-kernel:2.0.0'      //核心必须依赖
-    implementation  'com.scwang.smart:refresh-header-classics:2.0.0'
+    implementation 'com.scwang.smart:refresh-layout-kernel:2.0.0'      //核心必须依赖
+    implementation 'com.scwang.smart:refresh-header-classics:2.0.0'
 
     //smart-show
-    implementation ('com.github.the-pig-of-jungle.smart-show:all:3.0.3')
+    implementation('com.github.the-pig-of-jungle.smart-show:all:3.0.3')
     implementation 'com.tencent:mmkv-static:1.2.1'
 
     //沉浸式

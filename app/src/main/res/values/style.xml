@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="wrap_wrap">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="match_wrap">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <!--  text_color_primary_alpha_65  wrap_wrap -->
+    <style name="text_color_primary_alpha" parent="wrap_wrap">
+        <item name="android:textColor">@color/text_color_primary_alpha_80</item>
+    </style>
+    <!--  text_color_primary_alpha_65_18 18sp wrap_wrap -->
+    <style name="text_color_primary_alpha_18" parent="text_color_primary_alpha">
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <!--  text_color_primary_alpha_65_16 16sp wrap_wrap -->
+    <style name="text_color_primary_alpha_16" parent="text_color_primary_alpha">
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="text_color_primary_alpha_50" parent="wrap_wrap">
+        <item name="android:textColor">@color/text_color_primary_alpha_50</item>
+    </style>
+
+    <style name="text_color_primary_alpha_50_14" parent="text_color_primary_alpha_50">
+        <item name="android:textSize">14sp</item>
+    </style>
+</resources>

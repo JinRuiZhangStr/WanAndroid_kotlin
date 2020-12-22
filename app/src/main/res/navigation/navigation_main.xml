@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:startDestination="@+id/home_page"
+    tools:ignore="UnusedNavigation">
+    <fragment
+        android:id="@+id/home_page"
+        android:name="com.zjrdev.wanandroid.ui.homemine.MyHomePageFragment"
+        android:label="@string/home_page"
+        tools:layout="@layout/fragment_main"/>
+
+    <fragment
+        android:id="@+id/home_system"
+        android:label="@string/home_system"
+        android:name="com.zjrdev.wanandroid.ui.homesyetem.HomeSystemFragment"
+        tools:layout="@layout/fragment_homesystem"/>
+
+    <fragment
+        android:id="@+id/home_plaza"
+        android:label="@string/official_account"
+        android:name="com.zjrdev.wanandroid.ui.homeplaze.MainPlazeFragment"
+        tools:layout="@layout/fragment_mainplaze"/>
+
+    <fragment
+        android:id="@+id/home_mine"
+        android:label="@string/home_mine"
+        android:name="com.zjrdev.wanandroid.ui.homemine.MyHomePageFragment"
+        tools:layout="@layout/fragment_my_home_page">
+
+    </fragment>
+</navigation>
