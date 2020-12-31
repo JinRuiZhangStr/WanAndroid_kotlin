@@ -23,8 +23,8 @@ import org.jetbrains.anko.startActivity
  */
 class CustomNavigationBarView @JvmOverloads constructor(
     context: Context, attrs: AttributeSet? = null,
-    defstyleAttr: Int
-) : Toolbar(context, attrs,defstyleAttr) {
+    defstyleAttr: Int =0
+) : Toolbar(context, attrs, defstyleAttr) {
     /*
     mLeftImg -> 最左侧图标
     mLeftTextStr -> 左侧title文本
@@ -63,8 +63,10 @@ class CustomNavigationBarView @JvmOverloads constructor(
     private var mShowTabLayout: Boolean = false
 
     init {
-        val obtainStyledAttributes = context.obtainStyledAttributes(attrs,R.styleable.CustomNavigationBarView)
-        mLeftTextId = obtainStyledAttributes.getResourceId(R.styleable.CustomNavigationBarView_left_textId,0)
+        val obtainStyledAttributes =
+            context.obtainStyledAttributes(attrs, R.styleable.CustomNavigationBarView)
+        mLeftTextId =
+            obtainStyledAttributes.getResourceId(R.styleable.CustomNavigationBarView_left_textId, 0)
         mLeftTextStr =
             obtainStyledAttributes.getString(R.styleable.CustomNavigationBarView_left_textStr)
         mRightTextId =
@@ -115,17 +117,18 @@ class CustomNavigationBarView @JvmOverloads constructor(
         mNavigationBar =
             obtainStyledAttributes.getColor(R.styleable.CustomNavigationBarView_bg_color, 0)
         initView()
+        setContentInsetsRelative(0,0)
+        obtainStyledAttributes.recycle()
     }
 
     private fun initView() {
-        LayoutInflater.from(context).
-        inflate(R.layout.layout_custom_navigationbar_view,this)
+        LayoutInflater.from(context).inflate(R.layout.layout_custom_navigationbar_view, this)
         mLeftTextStr?.let {
-            tvLeftTitleNavigationBar.text =it
+            tvLeftTitleNavigationBar.text = it
             tvLeftTitleNavigationBar.visibility = View.VISIBLE
         }
 
-        if (mLeftTextId!=0) {
+        if (mLeftTextId != 0) {
             tvLeftTitleNavigationBar.setText(mLeftTextId)
             tvLeftTitleNavigationBar.visibility = View.VISIBLE
         }
@@ -194,13 +197,13 @@ class CustomNavigationBarView @JvmOverloads constructor(
         ivRightNavigationBarOne.setImageResource(drawableRes)
     }
 
-    fun setTabLayoutData(tablayoutTitle: Array<String?>,viewPager2: ViewPager2) {
+    fun setTabLayoutData(tablayoutTitle: Array<String?>, viewPager2: ViewPager2) {
         //viewpager2 余 Tablayout联动
-        TabLayoutMediator(tlNavigationBar,viewPager2) {tab, position ->
+        TabLayoutMediator(tlNavigationBar, viewPager2) { tab, position ->
             tab.text = tablayoutTitle[position]
         }.attach()
 
-        tlNavigationBar.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener{
+        tlNavigationBar.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
             override fun onTabReselected(tab: TabLayout.Tab?) {
 
             }

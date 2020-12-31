@@ -1,12 +1,12 @@
 package com.zjrdev.wanandroid.ui.base
 
-import androidx.lifecycle.ViewModel
+import com.zjrdev.wanandroid.vm.base.BaseViewModel
 
 /**
  *Created by 张金瑞.
  *Data: 2020-12-17
  */
-abstract class BaseVMFragment<VM: ViewModel>: BaseFragment() {
+abstract class BaseVMFragment<VM: BaseViewModel>: BaseFragment() {
 
     protected lateinit var mViewModel: VM
 

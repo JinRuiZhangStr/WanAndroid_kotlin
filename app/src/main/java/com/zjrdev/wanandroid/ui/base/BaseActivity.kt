@@ -10,6 +10,9 @@ import com.zjrdev.wanandroid.R
 import com.zjrdev.wanandroid.ext.getAppTheme
 import com.zjrdev.wanandroid.ext.resourceId
 import com.zjrdev.wanandroid.ui.main.ProgressDialogFragment
+import timber.log.Timber
+
+private const val TAG = "BaseActivity"
 
 abstract class BaseActivity: AppCompatActivity() {
 
@@ -19,6 +22,9 @@ abstract class BaseActivity: AppCompatActivity() {
         setTheme(getAppTheme())
         super.onCreate(savedInstanceState)
         setContentView(setLayoutId())
+        initImmersionBar()
+        setSmartSnackBar()
+        initActivity(savedInstanceState)
     }
 
     abstract fun setLayoutId(): Int
@@ -82,5 +88,15 @@ abstract class BaseActivity: AppCompatActivity() {
         if (this::progressDialogFragment.isInitialized && progressDialogFragment.isVisible) {
             progressDialogFragment.dismissAllowingStateLoss()
         }
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        Timber.tag(TAG).d("onDestroy:${localClassName}")
+    }
+
+    override fun onResume() {
+        super.onResume()
+        Timber.tag(TAG).d("onResume:${localClassName}")
     }
 }

@@ -15,17 +15,17 @@ import org.koin.androidx.viewmodel.ext.android.getViewModel
 class MyHomePageFragment: BaseVMFragment<MyHomePageViewModel>(),OnLazyClickListener {
     override fun setLayoutResId(): Int = R.layout.fragment_my_home_page
     override fun initView() {
-        TODO("Not yet implemented")
+
     }
 
     override fun initData() {
-        TODO("Not yet implemented")
+
     }
 
     override fun initVM(): MyHomePageViewModel = getViewModel()
 
     override fun startObserve() {
-        TODO("Not yet implemented")
+
     }
 
     override fun onLazyClick(v: View?) {

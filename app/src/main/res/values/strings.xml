@@ -12,4 +12,8 @@
     <string name="browsing_history">浏览历史</string>
     <string name="my_integral">我的积分</string>
     <string name="integral_ranking">积分排行</string>
+    <string name="login">登录</string>
+    <string name="username">用户名</string>
+    <string name="password">密码</string>
+    <string name="go_to_register">去注册</string>
 </resources>

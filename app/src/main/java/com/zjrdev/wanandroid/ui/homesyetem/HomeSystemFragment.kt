@@ -11,10 +11,10 @@ class HomeSystemFragment: BaseFragment() {
     override fun setLayoutResId(): Int  = R.layout.fragment_homesystem
 
     override fun initView() {
-        TODO("Not yet implemented")
+
     }
 
     override fun initData() {
-        TODO("Not yet implemented")
+
     }
 }

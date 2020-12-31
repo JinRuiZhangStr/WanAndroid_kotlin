@@ -1,6 +1,7 @@
 package com.zjrdev.wanandroid.db
 
 import androidx.lifecycle.LiveData
+import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.Query
 import androidx.room.Transaction
@@ -10,6 +11,7 @@ import com.zjrdev.wanandroid.data.bean.User
  *Created by 张金瑞.
  *Data: 2020-12-22
  */
+@Dao
 interface UserDao {
 
     /**

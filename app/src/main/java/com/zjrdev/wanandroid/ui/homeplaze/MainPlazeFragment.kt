@@ -11,10 +11,10 @@ class MainPlazeFragment: BaseFragment() {
     override fun setLayoutResId(): Int = R.layout.fragment_mainplaze
 
     override fun initView() {
-        TODO("Not yet implemented")
+
     }
 
     override fun initData() {
-        TODO("Not yet implemented")
+
     }
 }
