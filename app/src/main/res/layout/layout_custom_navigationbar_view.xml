@@ -13,7 +13,7 @@
         android:id="@+id/ivBackNavigationBar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:paddingLeft="16dp"
+        android:paddingStart="16dp"
         android:paddingTop="8dp"
         android:paddingBottom="8dp"
         android:src="@drawable/ic_arrow_black"
@@ -28,18 +28,18 @@
     <TextView
         android:id="@+id/tvLeftTitleNavigationBar"
         style="@style/text_color_primary_alpha_18"
-        android:layout_marginLeft="16dp"
+        android:layout_marginStart="16dp"
         android:textColor="?attr/textColorPrimary"
         android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@id/ivBackNavigationBar"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_goneMarginStart="16dp"/>
+        app:layout_goneMarginStart="16dp" />
 
     <TextView
         android:id="@+id/tvRightTitleNavigationBar"
         style="@style/text_color_primary_alpha_18"
-        android:layout_marginRight="16dp"
+        android:layout_marginEnd="16dp"
         android:textColor="?attr/textColorPrimary"
         android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -81,7 +81,7 @@
         android:id="@+id/ivRightNavigationBarOne"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginRight="4dp"
+        android:layout_marginEnd="4dp"
         android:padding="12dp"
         android:src="@drawable/ic_settings_black"
         app:layout_constraintBottom_toBottomOf="parent"

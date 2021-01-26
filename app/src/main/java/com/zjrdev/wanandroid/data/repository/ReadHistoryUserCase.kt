@@ -1,4 +1,4 @@
-package com.zjrdev.wanandroid.repository
+package com.zjrdev.wanandroid.data.repository
 
 /**
  *Created by 张金瑞.

@@ -1,7 +1,6 @@
 package com.zjrdev.wanandroid.vm
 
-import com.zjrdev.wanandroid.repository.GetUserMsgUserCase
-import com.zjrdev.wanandroid.repository.ReadHistoryUserCase
+import com.zjrdev.wanandroid.data.repository.GetUserMsgUserCase
 import com.zjrdev.wanandroid.vm.base.BaseViewModel
 
 /**

@@ -2,15 +2,15 @@ package com.zjrdev.wanandroid.ui.member
 
 import com.zjrdev.wanandroid.R
 import com.zjrdev.wanandroid.ui.base.BaseVMFragment
-import com.zjrdev.wanandroid.vm.RegisterViewModel
+import com.zjrdev.wanandroid.vm.LoginViewModel
 import org.koin.androidx.viewmodel.ext.android.getViewModel
 
 /**
  *Created by 张金瑞.
  *Data: 2020-12-31
  */
-class RegisterFragment: BaseVMFragment<RegisterViewModel>() {
-    override fun initVM(): RegisterViewModel {
+class RegisterFragment: BaseVMFragment<LoginViewModel>() {
+    override fun initVM(): LoginViewModel {
         return getViewModel()
     }
 

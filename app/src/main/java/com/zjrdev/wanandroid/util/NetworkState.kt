@@ -8,5 +8,6 @@ package com.zjrdev.wanandroid.util
 data class ListModel<T>(
     val showSuccess: List<T>?=null,
     val showLoading: Boolean = false,
-    val showEnd: Boolean = false
+    val showEnd: Boolean = false,
+    val showError: String? = null
 )

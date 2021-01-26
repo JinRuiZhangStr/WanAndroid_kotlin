@@ -14,15 +14,18 @@ android {
         minSdkVersion 21
         targetSdkVersion 29
         versionCode 1
-        versionName "1.0"
+        versionName "1.0.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
         javaCompileOptions {
             annotationProcessorOptions {
                 arguments = [
+                        //配置并启用架构导出到给定目录中【"$projectDir/schemas".toString()】的json文件功能
                         "room.schemaLocation"  : "$projectDir/build/schemas".toString(),
+                        //启用 Gradle 增量注释处理器
                         "room.incremental"     : "true",
+                        //配置 Room 以重写查询 ，设置成false则不需要导出到指定目录json文件
                         "room.expandProjection": "true"]
             }
         }

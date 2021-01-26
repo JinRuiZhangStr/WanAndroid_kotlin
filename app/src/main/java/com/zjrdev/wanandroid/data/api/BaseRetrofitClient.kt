@@ -1,7 +1,9 @@
 package com.zjrdev.wanandroid.data.api
+import android.annotation.SuppressLint
 import com.zjrdev.wanandroid.BuildConfig
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient
+import okhttp3.ResponseBody.Companion.toResponseBody
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
@@ -47,6 +49,7 @@ abstract class BaseRetrofitClient {
             return builder.build()
         }
 
+    @SuppressLint("BinaryOperationInTimber")
     private val mLoggingInterceptor = Interceptor {chain ->
         //请求参数
         val request = chain.request()
@@ -64,7 +67,7 @@ abstract class BaseRetrofitClient {
             .d("request url:${request.url}\ntime:${(t2 - t1) / 1e6}\nbody:${content}\n")
 
         response.newBuilder()
-            .body(response.body)
+            .body(content?.toResponseBody(contentType))
             .build()
     }
 

@@ -1,4 +1,4 @@
-package com.zjrdev.wanandroid.repository
+package com.zjrdev.wanandroid.data.repository
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

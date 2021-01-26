@@ -1,5 +1,6 @@
 package com.zjrdev.wanandroid.view
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.util.AttributeSet
 import android.view.LayoutInflater
@@ -21,6 +22,7 @@ import org.jetbrains.anko.startActivity
  *Created by 张金瑞.
  *Data: 2020-12-22
  */
+@SuppressLint("NewApi")
 class CustomNavigationBarView @JvmOverloads constructor(
     context: Context, attrs: AttributeSet? = null,
     defstyleAttr: Int =0

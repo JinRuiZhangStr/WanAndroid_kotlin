@@ -36,14 +36,14 @@ abstract class BaseActivity: AppCompatActivity() {
      * 沉浸式状态栏  open为方法增加，该方法表示可以重写
      */
     open fun initImmersionBar() {
-        immersionBar {
-            statusBarColor(
-                TypedValue().resourceId(
-                    R.attr.colorPrimary,
-                    theme
-                )
-            ).autoStatusBarDarkModeEnable(true,0.2f)
-        }
+//        immersionBar {
+//            statusBarColor(
+//                TypedValue().resourceId(
+//                    R.attr.colorPrimary,
+//                    theme
+//                )
+//            ).autoStatusBarDarkModeEnable(true,0.2f)
+//        }
     }
 
     /**

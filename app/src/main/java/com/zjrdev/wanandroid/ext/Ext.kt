@@ -5,6 +5,7 @@ import android.content.res.Resources
 import android.graphics.Color
 import android.util.TypedValue
 import android.view.View
+import android.view.inputmethod.InputMethodManager
 import androidx.core.content.ContextCompat
 
 const val SET_THEME = "set_theme"
@@ -68,3 +69,20 @@ fun View.color(colorRes: Int) = context.color(colorRes)
 
 fun Context.text(textRes: Int) = this.resources.getString(textRes)
 fun View.text(textRes: Int) = context.text(textRes )
+
+/**
+ * 隐藏软键盘
+ */
+fun View.hideSoftInput() {
+    val imm = context.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+    imm.hideSoftInputFromWindow(windowToken,0)
+}
+
+/**
+ * 弹出软键盘
+ */
+fun View.ShowSoftInput() {
+    requestFocus()
+    val imm = context.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+    imm.showSoftInput(this,InputMethodManager.SHOW_IMPLICIT)
+}
