@@ -113,4 +113,7 @@ dependencies {
     implementation 'com.gyf.immersionbar:immersionbar-ktx:3.0.0'
     //cookie 持久化管理工具
     implementation 'com.github.franmontiel:PersistentCookieJar:v1.0.1'
+
+    //RecyclerViewAdapterHelper
+    implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:3.0.2'
 }

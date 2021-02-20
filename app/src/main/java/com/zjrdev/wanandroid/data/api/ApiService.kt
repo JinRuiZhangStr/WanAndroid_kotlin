@@ -1,9 +1,11 @@
 package com.zjrdev.wanandroid.data.api
 
+import com.zjrdev.wanandroid.data.bean.Banner
 import com.zjrdev.wanandroid.data.bean.User
 import com.zjrdev.wanandroid.data.bean.base.WanResponse
 import retrofit2.http.Field
 import retrofit2.http.FormUrlEncoded
+import retrofit2.http.GET
 import retrofit2.http.POST
 
 /**
@@ -18,4 +20,7 @@ interface ApiService {
         @Field("username") userName: String,
         @Field("password") passWord: String
     ): WanResponse<User>
+
+    @GET("/banner/json")
+    suspend fun getBanner(): WanResponse<List<Banner>>
 }

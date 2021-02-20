@@ -7,6 +7,7 @@ import android.util.TypedValue
 import android.view.View
 import android.view.inputmethod.InputMethodManager
 import androidx.core.content.ContextCompat
+import androidx.core.text.HtmlCompat
 
 const val SET_THEME = "set_theme"
 
@@ -86,3 +87,9 @@ fun View.ShowSoftInput() {
     val imm = context.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
     imm.showSoftInput(this,InputMethodManager.SHOW_IMPLICIT)
 }
+
+/**
+ * Html类提供我们一些方法可以将HTML字符串转变成可显示的样式文本
+ */
+fun String?.htmlToSpanned() =
+    if (this.isNullOrEmpty()) "" else HtmlCompat.fromHtml(this,HtmlCompat.FROM_HTML_MODE_LEGACY)
