@@ -13,7 +13,7 @@ import kotlinx.android.synthetic.main.fragment_main.*
 class MainFragment : BaseFragment() {
     override fun setLayoutResId(): Int = R.layout.fragment_main
 
-    override fun initView() {
+    override fun initData() {
         val mHomePageTabLayout = arrayOf(
             context?.getString(R.string.home_page),
             context?.getString(R.string.home_project)
@@ -21,7 +21,7 @@ class MainFragment : BaseFragment() {
         homePageNv.setTabLayoutData(mHomePageTabLayout, homePageVp)
     }
 
-    override fun initData() {
+    override fun initView() {
 
         val mainPageFragment = HomePageFragment()
         val mainProjectFragment = HomeProjectFragment()

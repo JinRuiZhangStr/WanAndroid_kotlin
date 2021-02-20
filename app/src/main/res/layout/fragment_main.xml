@@ -9,7 +9,9 @@
         android:id="@+id/homePageNv"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:isShow_right_img1="true"
+        app:isShow_left_img="false"
+        app:isShow_right_img1="false"
+        app:isShow_right_img2="true"
         app:isShow_tab_layout="true"/>
 
     <androidx.viewpager2.widget.ViewPager2

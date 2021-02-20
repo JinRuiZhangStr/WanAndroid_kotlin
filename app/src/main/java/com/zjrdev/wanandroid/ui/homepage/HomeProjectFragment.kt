@@ -1,5 +1,6 @@
 package com.zjrdev.wanandroid.ui.homepage
 
+import com.zjrdev.wanandroid.R
 import com.zjrdev.wanandroid.ui.base.BaseVMFragment
 import com.zjrdev.wanandroid.vm.HomeProjectViewModel
 
@@ -16,15 +17,13 @@ class HomeProjectFragment: BaseVMFragment<HomeProjectViewModel>() {
         TODO("Not yet implemented")
     }
 
-    override fun setLayoutResId(): Int {
-        TODO("Not yet implemented")
-    }
+    override fun setLayoutResId(): Int  = R.layout.fragment_main_project
 
     override fun initView() {
-        TODO("Not yet implemented")
+
     }
 
     override fun initData() {
-        TODO("Not yet implemented")
+
     }
 }
