@@ -4,17 +4,29 @@ import android.content.Context
 import android.content.res.Resources
 import android.graphics.Color
 import android.util.TypedValue
+import android.view.LayoutInflater
 import android.view.View
+import android.view.ViewGroup
 import android.view.inputmethod.InputMethodManager
+import androidx.annotation.LayoutRes
 import androidx.core.content.ContextCompat
 import androidx.core.text.HtmlCompat
 
 const val SET_THEME = "set_theme"
+const val HOME_PAGE_CUT = "home_page_cut"
 
 //获取主题属性id
 fun TypedValue.resourceId(resId: Int, theme: Resources.Theme): Int {
     theme.resolveAttribute(resId, this, true)
     return this.resourceId
+}
+
+fun ViewGroup.inflate(@LayoutRes layoutId: Int,attachToRoot: Boolean = true):View {
+    if (layoutId == -1) {
+        return this
+    }
+
+    return LayoutInflater.from(context).inflate(layoutId,this,attachToRoot)
 }
 
 /**
@@ -93,3 +105,4 @@ fun View.ShowSoftInput() {
  */
 fun String?.htmlToSpanned() =
     if (this.isNullOrEmpty()) "" else HtmlCompat.fromHtml(this,HtmlCompat.FROM_HTML_MODE_LEGACY)
+

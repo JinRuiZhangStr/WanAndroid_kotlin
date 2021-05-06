@@ -116,4 +116,8 @@ dependencies {
 
     //RecyclerViewAdapterHelper
     implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:3.0.2'
+
+    //tablayout
+    implementation 'com.github.angcyo.DslTablayout:TabLayout:1.5.4'
+    implementation 'com.github.angcyo.DslTablayout:ViewPager2Delegate:1.5.4'
 }

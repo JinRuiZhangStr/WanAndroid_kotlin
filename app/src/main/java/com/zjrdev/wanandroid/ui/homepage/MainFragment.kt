@@ -24,7 +24,7 @@ class MainFragment : BaseFragment() {
     override fun initView() {
 
         val mainPageFragment = HomePageFragment()
-        val mainProjectFragment = HomeProjectFragment()
+        val mainProjectFragment = MainProjectFragment()
 
         val fragments = listOf(mainPageFragment,mainProjectFragment)
         homePageVp.adapter = MyFragmentPagerAdapter(requireActivity(),fragments )
