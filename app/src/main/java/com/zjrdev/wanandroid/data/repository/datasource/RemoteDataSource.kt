@@ -14,6 +14,21 @@ import java.io.IOException
 class RemoteDataSource {
 
     /**
+     * 获取首页列表数据
+     */
+    suspend fun getHomeArticles(page: Int) = safeApiCall (
+        call = {requestHomeArticles(page)}
+    )
+
+    private suspend fun requestHomeArticles(page: Int) : ResultData<WanListResponse<List<Article>>> {
+        val homeArticles = RetrofitClient.getInstance(WAN_ANDROID).service.getHomeArticles(page)
+        if (homeArticles.errorCode == 0) {
+            return ResultData.Success(homeArticles.data)
+        }
+        return ResultData.Error(IOException("Failed to get homeArticles${homeArticles.errorMsg}"))
+    }
+
+    /**
      * 我的界面
      */
     suspend fun login(userName: String, password: String) = safeApiCall(

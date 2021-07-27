@@ -20,6 +20,7 @@ class ArticleUserCase(private val remoteDataSource: RemoteDataSource) {
      * sealed  java中的枚举enum
      */
     sealed class ArticleType {
+        object Home: ArticleType() // 首页
         object LatestProject : ArticleType() //最新项目
         object ProjectDetailList : ArticleType() //项目列表
     }
@@ -53,6 +54,7 @@ class ArticleUserCase(private val remoteDataSource: RemoteDataSource) {
             if (articleType is ArticleType.ProjectDetailList) 1 else 0
 
         val result = when (articleType) {
+            ArticleType.Home -> remoteDataSource.getHomeArticles(currentPage )
             ArticleType.ProjectDetailList -> remoteDataSource.getProjectTypeDetailList(
                 currentPage,
                 cid
@@ -112,4 +114,13 @@ class ArticleUserCase(private val remoteDataSource: RemoteDataSource) {
         }
 
     }
+
+    /**
+     * 获取首页列表数据
+     */
+    suspend fun getHomeArticleList(
+        isRefresh: Boolean = false,
+        listModel: MutableLiveData<ListModel<Article>>?,
+        loadPageStatus: MutableLiveData<LoadPageStatus>
+    ) = getArticleList(ArticleType.Home,isRefresh,listModel, loadPageStatus)
 }

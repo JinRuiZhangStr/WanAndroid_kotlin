@@ -17,8 +17,17 @@ interface ApiService {
         @Field("password") passWord: String
     ): WanResponse<User>
 
+    /**
+     * 获取banner 数据
+     */
     @GET("/banner/json")
     suspend fun getBanner(): WanResponse<List<Banner>>
+
+    /**
+     * 获取首页文章数据
+     */
+    @GET("/article/list/{page}/json")
+    suspend fun getHomeArticles(@Path("page") page: Int): WanResponse<WanListResponse<List<Article>>>
 
     /**
      * 项目分类
