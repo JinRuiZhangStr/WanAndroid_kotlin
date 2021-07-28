@@ -21,6 +21,7 @@ class HomePageViewModel(private val mainRepository: MainRepository,private val a
     val mBanner: MutableLiveData<List<Banner>> = MutableLiveData()
     val mListModel = MutableLiveData<ListModel<Article>>()
     private val loadPageStatus = MutableLiveData<LoadPageStatus>()
+    val mStickArticles = MutableLiveData<List<Article>>()
 
     fun loadBanner() = launchUI {
         val result = withContext(Dispatchers.IO){
@@ -40,5 +41,16 @@ class HomePageViewModel(private val mainRepository: MainRepository,private val a
                 loadPageStatus
             )
         }
+    }
+
+    fun loadStickArticles() = launchUI {
+        val result = withContext(Dispatchers.IO) {
+            mainRepository.getStickArticles()
+        }
+
+        if (result is ResultData.Success) {
+            mStickArticles.value = result.data
+        }
+
     }
 }

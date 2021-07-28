@@ -100,4 +100,16 @@ class RemoteDataSource {
         }
         return ResultData.Error(IOException("Failed to get requestLatestProjectList${projectNewData.errorMsg}"))
     }
+
+    suspend fun getStickArticles() = safeApiCall(
+        call = {requestStickArticles()}
+    )
+
+    private suspend fun requestStickArticles(): ResultData<List<Article>> {
+        val stickArticle = RetrofitClient.getInstance(WAN_ANDROID).service.getStickArticles()
+        if (stickArticle.errorCode == 0) {
+            return ResultData.Success(stickArticle.data)
+        }
+        return ResultData.Error(IOException("Failed to get requestStickArticles${stickArticle.errorMsg}"))
+    }
 }

@@ -1,6 +1,7 @@
 package com.zjrdev.wanandroid.adapter
 
 import com.chad.library.adapter.base.BaseQuickAdapter
+import com.chad.library.adapter.base.module.LoadMoreModule
 import com.chad.library.adapter.base.viewholder.BaseViewHolder
 import com.zjrdev.wanandroid.R
 import com.zjrdev.wanandroid.data.bean.Article
@@ -12,7 +13,8 @@ import kotlinx.android.synthetic.main.item_home_page.view.*
  *Created by 张金瑞.
  *Data: 2021-1-27
  */
-class HomePageAdapter: BaseQuickAdapter<Article,BaseViewHolder>(R.layout.item_home_page) {
+class HomePageAdapter: BaseQuickAdapter<Article,BaseViewHolder>(R.layout.item_home_page),
+    LoadMoreModule{
     override fun convert(holder: BaseViewHolder, item: Article) {
         holder.apply {
             itemView.apply {

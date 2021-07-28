@@ -2,6 +2,8 @@ package com.zjrdev.wanandroid.app
 
 import com.zjrdev.wanandroid.data.repository.*
 import com.zjrdev.wanandroid.data.repository.datasource.RemoteDataSource
+import com.zjrdev.wanandroid.view.loadpage.BasePageViewForStatus
+import com.zjrdev.wanandroid.view.loadpage.SimplePageViewForStatus
 import com.zjrdev.wanandroid.vm.HomePageViewModel
 import com.zjrdev.wanandroid.vm.HomeProjectViewModel
 import com.zjrdev.wanandroid.vm.LoginViewModel
@@ -23,6 +25,7 @@ val repositoryModule = module {
     single { MainRepository(get()) }
     single { ProjectRepository(get()) }
     single { ArticleUserCase(get()) }
+    single<BasePageViewForStatus> { SimplePageViewForStatus()  }
 }
 
 val appModule = listOf(viewModelModule, repositoryModule)

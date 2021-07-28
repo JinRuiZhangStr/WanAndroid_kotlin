@@ -51,4 +51,10 @@ interface ApiService {
     suspend fun getProjectNewData(
         @Path("page") pageNo: Int
     ): WanResponse<WanListResponse<MutableList<Article>>>
+
+    /**
+     * 获取置顶文章数据
+     */
+    @GET("/article/top/json")
+    suspend fun getStickArticles(): WanResponse<List<Article>>
 }
