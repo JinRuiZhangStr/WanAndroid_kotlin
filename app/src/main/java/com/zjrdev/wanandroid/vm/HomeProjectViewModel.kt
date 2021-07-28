@@ -33,6 +33,7 @@ class HomeProjectViewModel(
     fun loadProjectArticles(isRefresh: Boolean = false,cid: Int = 0) = launchUI {
         withContext(Dispatchers.IO) {
             when (cid ) {
+                //如果 cid == 0 查询最新项目
                 0 -> {
                     articaleUserCase.getLatesProjectList(
                         isRefresh,
@@ -40,7 +41,8 @@ class HomeProjectViewModel(
                         mProjectLoadPageStatus
                     )
                 }
-                 else -> {
+                //分类项目数据
+                else -> {
                     articaleUserCase.getProjectDetailList(
                         isRefresh,
                         mProjectListModel,

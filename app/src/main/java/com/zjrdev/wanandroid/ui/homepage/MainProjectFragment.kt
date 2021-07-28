@@ -73,8 +73,8 @@ class MainProjectFragment: BaseVMFragment<HomeProjectViewModel>() {
         llMainProjectLoadPageViewForStatus.failTextView().onClick { mViewModel.loadProjectClassify() }
         ViewPager2Delegate(vpMainProject,tlMainProject)
         vpMainProject.registerOnPageChangeCallback(object :ViewPager2.OnPageChangeCallback(){
-            private var currentPosition = 0
-            private var oldPosition = 0
+            private var currentPosition = 0  //当前滑动位置
+            private var oldPosition = 0  //上一个滑动位置
 
             override fun onPageScrollStateChanged(state: Int) {
                 if (state == 0) {
