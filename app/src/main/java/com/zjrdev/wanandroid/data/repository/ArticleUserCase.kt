@@ -25,11 +25,20 @@ class ArticleUserCase(private val remoteDataSource: RemoteDataSource) {
         object ProjectDetailList : ArticleType() //项目列表
     }
 
+    /**
+     * 获取首页列表数据
+     */
+    suspend fun getHomeArticleList(
+        isRefresh: Boolean = false,
+        listModel: MutableLiveData<ListModel<Article>>?,
+        loadPageStatus: MutableLiveData<LoadPageStatus>
+    ) = getArticleList(ArticleType.Home,isRefresh,listModel, loadPageStatus)
+
     suspend fun getLatesProjectList(
         isRefresh: Boolean = false,
         listModel: MutableLiveData<ListModel<Article>>?,
         loadPageStatus: MutableLiveData<LoadPageStatus>
-    ) = getArticleList(ArticleType.ProjectDetailList, isRefresh, listModel, loadPageStatus)
+    ) = getArticleList(ArticleType.LatestProject, isRefresh, listModel, loadPageStatus)
 
     suspend fun getProjectDetailList(
         isRefresh: Boolean = false,
@@ -114,13 +123,4 @@ class ArticleUserCase(private val remoteDataSource: RemoteDataSource) {
         }
 
     }
-
-    /**
-     * 获取首页列表数据
-     */
-    suspend fun getHomeArticleList(
-        isRefresh: Boolean = false,
-        listModel: MutableLiveData<ListModel<Article>>?,
-        loadPageStatus: MutableLiveData<LoadPageStatus>
-    ) = getArticleList(ArticleType.Home,isRefresh,listModel, loadPageStatus)
 }

@@ -8,6 +8,7 @@ import androidx.viewpager2.widget.ViewPager2
 import com.angcyo.tablayout.delegate2.ViewPager2Delegate
 import com.jeremyliao.liveeventbus.LiveEventBus
 import com.zjrdev.wanandroid.R
+import com.zjrdev.wanandroid.adapter.MyFragmentPagerAdapter
 import com.zjrdev.wanandroid.data.bean.ClassifyResponse
 import com.zjrdev.wanandroid.ext.HOME_PAGE_CUT
 import com.zjrdev.wanandroid.ext.inflate
@@ -60,7 +61,15 @@ class MainProjectFragment: BaseVMFragment<HomeProjectViewModel>() {
                                 }
                             }
 
+                            mFragmentList.add(
+                                ProjectTypeFragment.newInstance(it.id)
+                            )
+
                         }
+                    }
+
+                    activity?.let {activity ->
+                        vpMainProject.adapter = MyFragmentPagerAdapter(activity,mFragmentList)
                     }
                 }
             })
