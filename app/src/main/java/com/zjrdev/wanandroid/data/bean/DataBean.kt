@@ -93,3 +93,21 @@ data class Children(
     val userControlSetTop: Boolean,
     val visible: Int
 ) : Serializable
+
+/**
+ * 我的页面功能data
+ */
+data class MyFunction(
+    val drawable: Int,
+    val functionName: String
+)
+
+/**
+ * 主题数据
+ */
+data class Theme(
+    val color: Int,
+    val theme: Int,
+    val colorName: String,
+    var isChoose: Int
+)

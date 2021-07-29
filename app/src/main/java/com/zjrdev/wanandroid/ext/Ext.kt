@@ -13,6 +13,7 @@ import androidx.core.content.ContextCompat
 import androidx.core.text.HtmlCompat
 
 const val SET_THEME = "set_theme"
+const val MY_PAGE_SET_THEME_COLOR = "my_page_set_theme_color"
 const val HOME_PAGE_CUT = "home_page_cut"
 
 //获取主题属性id
